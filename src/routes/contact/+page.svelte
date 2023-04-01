@@ -6,6 +6,7 @@
 
 <h2>Contact</h2>
 <hr />
+<!-- TODO: Bu kısım component olacak -->
 <div class="card p-3">
   <form method="POST" action="/contact" class="text-start">
     <div class="mb-3">
@@ -64,17 +65,17 @@
 
     <!-- Result -->
     {#if form?.success}
-      <button type="submit" class="btn btn-success form-control disabled"
+      <button type="submit" class="btn btn-success form-control mt-3 disabled"
         >Success</button
       >
     {:else if form?.success == false}
-      <button type="submit" class="btn btn-danger form-control disabled"
+      <button type="submit" class="btn btn-danger form-control mt-3 disabled"
         >Error</button
       >
     {:else}
       <button
         type="submit"
-        class="btn bg-svelte form-control"
+        class="btn bg-svelte form-control mt-3"
         name="send_message">Send Message</button
       >
     {/if}

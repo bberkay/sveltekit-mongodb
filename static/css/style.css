@@ -1,5 +1,24 @@
 body{
-    background-color: #f8f8f8;
+    background-color: #1a1a1a;
+    color:#f2f2f2;
+}
+
+.card{
+    background-color: #242424;
+}
+
+.form-label{
+    color:#cccccc!important;
+}
+
+.form-control{
+    background-color: #383838!important;
+    color:#f2f2f2!important;
+    border:1px solid #383838!important;
+}
+
+.form-control::placeholder{
+    color:#919191!important;
 }
 
 .bg-svelte{
@@ -14,4 +33,14 @@ body{
 
 .bg-svelte:active{
     opacity:0.7;
+}
+
+input::file-selector-button{
+    border:1px solid #383838;
+    background-color: #242424!important;
+    color: #fff!important;
+}
+
+img.logo{
+    filter: drop-shadow(0px 0px 8px #5a5a5a);
 }
