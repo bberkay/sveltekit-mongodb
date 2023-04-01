@@ -1,0 +1,17 @@
+body{
+    background-color: #f8f8f8;
+}
+
+.bg-svelte{
+    border:#ff3e00 1px solid!important;
+    background-color: #ff3e00!important;
+    color: #fff!important;
+}
+
+.bg-svelte:hover{
+    opacity:0.9;
+}
+
+.bg-svelte:active{
+    opacity:0.7;
+}
