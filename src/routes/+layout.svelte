@@ -13,6 +13,7 @@
                 <!-- Page Content END -->
             </div>
             <hr>
+            <!-- Footer -->
             <footer class = "mt-2">
                 <div class="d-flex justify-content-center align-items-center">
                     <div>
@@ -32,6 +33,7 @@
                     </div>
                 </div>
             </footer>
+            <!-- Footer END -->
         </div>
     </main> 
 </div>
