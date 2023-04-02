@@ -22,7 +22,7 @@ export const options = {
 };
 
 export function get_hooks() {
-	return {};
+	return import("../../../src/hooks.server.ts");
 }
 
 export { set_assets, set_building, set_private_env, set_public_env };
