@@ -1,9 +1,17 @@
 {
 	"compilerOptions": {
-		"paths": {},
+		"paths": {
+			"$lib": [
+				"../src/lib"
+			],
+			"$lib/*": [
+				"../src/lib/*"
+			]
+		},
 		"rootDirs": [
 			"..",
-			"./types"
+			"./types",
+			"./types/$lib"
 		],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
