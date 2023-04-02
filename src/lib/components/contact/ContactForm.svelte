@@ -1,10 +1,11 @@
 <script lang="ts">
-    import type { ActionData } from '././$types';
+    import type { ActionData } from './././$types';
 
     export let form: ActionData;
 </script>
 
-<form method="POST" action="/contact" class="text-start">
+<div class="card p-3">
+  <form method="POST" action="/contact" class="text-start">
     <div class="mb-3">
       <!-- Email Address -->
       <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -29,6 +30,8 @@
         id="formGroupExampleInput"
         placeholder="About Sveltekit"
         name="subject"
+        max="100"
+        min="10"
         required
       />
       <!-- Subject END -->
@@ -41,32 +44,21 @@
         class="form-control"
         id="exampleFormControlTextarea1"
         rows="3"
+        maxlength="1000"
+        minlength="15"
         name="message"
         required
       />
       <!-- Message END -->
     </div>
-    <div class="mb-3">
-      <!-- File(s) -->
-      <label for="formFileMultiple" class="form-label">File(s)</label>
-      <input
-        class="form-control"
-        type="file"
-        id="formFileMultiple"
-        name="files"
-        multiple
-      />
-      <!-- File(s) END -->
-    </div>
-
     <!-- Result -->
     {#if form?.success}
       <button type="submit" class="btn btn-success form-control mt-3 disabled"
-        >Success</button
+        >Successful</button
       >
     {:else if form?.success === false}
       <button type="submit" class="btn btn-danger form-control mt-3 disabled"
-        >Error</button
+        >Error, Please Try Again</button
       >
     {:else}
       <button
@@ -77,3 +69,4 @@
     {/if}
     <!-- Result End -->
   </form>
+</div>

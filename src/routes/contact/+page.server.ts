@@ -11,9 +11,7 @@ export const actions = {
         const email = data.get("email")!;
         const subject = data.get("subject")!;
         const message = data.get("message")!;
-        const files = data.get("files");
-        // TODO: Files yapılacak
-        
+
         // Get Mail Data
         const transporterMail = MAIL_USERNAME;
         const transporterPass = MAIL_PASSWORD;

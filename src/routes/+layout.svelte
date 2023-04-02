@@ -12,9 +12,8 @@
                 <slot />
                 <!-- Page Content END -->
             </div>
-            <hr>
             <!-- Footer -->
-            <footer class = "mt-2">
+            <footer class = "mt-3">
                 <div class="d-flex justify-content-center align-items-center">
                     <div>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/1200px-Svelte_Logo.svg.png" class = "logo" alt="Svelte logo" width = "30" height = "38">

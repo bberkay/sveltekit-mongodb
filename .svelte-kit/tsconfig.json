@@ -10,8 +10,7 @@
 		},
 		"rootDirs": [
 			"..",
-			"./types",
-			"./types/$lib"
+			"./types"
 		],
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,

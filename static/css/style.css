@@ -42,5 +42,59 @@ input::file-selector-button{
 }
 
 img.logo{
-    filter: drop-shadow(0px 0px 8px #5a5a5a);
+    filter: drop-shadow(0px 0px 10px #181818);
+}
+
+input:focus{
+    box-shadow: none!important;
+    border:1px solid #555555!important;
+}
+
+textarea:focus{
+    box-shadow: none!important;
+    border:1px solid #555555!important;
+}
+
+.btn:focus{
+    box-shadow: none!important;
+}
+
+.btn-success{
+    background-color: #37bb63!important;
+    border-color: #37bb63!important;
+}
+
+.btn-danger{
+    background-color: #c93434!important;
+    border-color: #c93434!important;
+}
+
+.inner-card{
+    border:1px solid #555555;
+    background-color: #383838;
+    color:#ccc;
+}
+
+.border-div{
+    border:1px solid #555555;
+}
+
+.card-title-link{
+    color:#6188f3;
+}
+
+.card-content-p{
+    margin-bottom:0.4rem;
+}
+
+.inner-card h5{
+    color:#f3f3f3;
+}
+
+.inner-card small{
+    color:#a8a8a8;
+}
+
+.card-header-section{
+    margin-bottom:-0.2rem;
 }

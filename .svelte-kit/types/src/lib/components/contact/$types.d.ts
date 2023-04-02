@@ -10,13 +10,15 @@ type EnsureDefined<T> = T extends null | undefined ? {} : T;
 type OptionalUnion<U extends Record<string, any>, A extends keyof U = U extends U ? keyof U : never> = U extends unknown ? { [P in Exclude<A, keyof U>]?: never } & U : never;
 export type Snapshot<T = any> = Kit.Snapshot<T>;
 
+
 type ExcludeActionFailure<T> = T extends Kit.ActionFailure<any> ? never : T extends void ? never : T;
 type ActionsSuccess<T extends Record<string, (...args: any) => any>> = { [Key in keyof T]: ExcludeActionFailure<Awaited<ReturnType<T[Key]>>>; }[keyof T];
 type ExtractActionFailure<T> = T extends Kit.ActionFailure<infer X>	? X extends void ? never : X : never;
 type ActionsFailure<T extends Record<string, (...args: any) => any>> = { [Key in keyof T]: Exclude<ExtractActionFailure<Awaited<ReturnType<T[Key]>>>, void>; }[keyof T];
-type ActionsExport = typeof import('../../../routes/contact/+page.server.js').actions
+type ActionsExport = typeof import('../../../../../../src/routes/contact/+page.server.js').actions
 export type SubmitFunction = Kit.SubmitFunction<Expand<ActionsSuccess<ActionsExport>>, Expand<ActionsFailure<ActionsExport>>>
 export type ActionData = Expand<Kit.AwaitedActions<ActionsExport>> | null;
+export type PageServerData = null;
 export type Action<OutputData extends Record<string, any> | void = Record<string, any> | void> = Kit.Action<RouteParams, OutputData, RouteId>
 export type Actions<OutputData extends Record<string, any> | void = Record<string, any> | void> = Kit.Actions<RouteParams, OutputData, RouteId>
 export type RequestEvent = Kit.RequestEvent<RouteParams, RouteId>;

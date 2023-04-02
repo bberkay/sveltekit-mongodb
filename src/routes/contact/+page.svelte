@@ -5,8 +5,7 @@
   export let form: ActionData;
 </script>
 
-<h2>Contact</h2>
-<hr />
+<h2 class = "mb-4">Contact</h2>
 <ContactForm {form} />
 
 
