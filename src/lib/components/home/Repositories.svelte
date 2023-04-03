@@ -25,7 +25,6 @@
         const response = await fetch("?skip=" + (skip - 1));
         await response.json();
     }
-    
 </script>
 
 {#each data as repository}

@@ -6,6 +6,9 @@
 
 <h1 class = "mb-4">Home</h1>
 <div class="card p-3 pb-1">
+    <!-- FIXME: data verileri güncel geliyor ancak component güncellenmiyor. -->
     <Search/>
+
+    <!-- FIXME: data verileri güncel geliyor ancak component güncellenmiyor. -->
     <Repositories bind:data={data["data"]}/>
 </div>
