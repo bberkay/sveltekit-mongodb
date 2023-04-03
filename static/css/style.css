@@ -1,3 +1,4 @@
+/* -------- Root ---------- */
 body{
     background-color: #1a1a1a;
     color:#f2f2f2;
@@ -6,20 +7,6 @@ body{
 .card{
     width:370px;
     background-color: #242424;
-}
-
-.form-label{
-    color:#cccccc!important;
-}
-
-.form-control{
-    background-color: #383838!important;
-    color:#f2f2f2!important;
-    border:1px solid #383838!important;
-}
-
-.form-control::placeholder{
-    color:#919191!important;
 }
 
 .btn-border{
@@ -49,17 +36,27 @@ input:focus .input-group{
 .btn:focus{
     box-shadow: none!important;
 }
+/* -------- Root END ---------- */
 
-.btn-success{
-    background-color: #37bb63!important;
-    border-color: #37bb63!important;
+/* -------- Contact ---------- */
+
+.form-control{
+    background-color: #383838!important;
+    color:#f2f2f2!important;
+    border:1px solid #383838!important;
 }
 
-.btn-danger{
-    background-color: #c93434!important;
-    border-color: #c93434!important;
+.form-control::placeholder{
+    color:#919191!important;
 }
 
+.form-label{
+    color:#cccccc!important;
+}
+
+/* -------- Contact END ---------- */
+
+/* -------- Home ---------- */
 .inner-card{
     width:335px;
     border:1px solid #424242;
@@ -114,6 +111,18 @@ input:focus .input-group{
 .page-link:focus{
     box-shadow: none!important;
 }
+/* -------- Home END ---------- */
+
+/* -------- Overriding Buttons ---------- */
+.btn-success{
+    background-color: #37bb63!important;
+    border-color: #37bb63!important;
+}
+
+.btn-danger{
+    background-color: #c93434!important;
+    border-color: #c93434!important;
+}
 
 .bg-svelte{
     border:#ff3e00 1px solid!important;
@@ -134,3 +143,4 @@ input:focus .input-group{
     color: #fff!important;
     opacity:0.7;
 }
+/* -------- Overriding Buttons END ---------- */

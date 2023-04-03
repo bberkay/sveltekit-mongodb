@@ -7,7 +7,9 @@ export async function GET(request: Request): Promise<Response> {
 	if(skip < 0) 
         skip = 0;
 
-    console.log("skip: " + skip);
+    // get repositories from MongoDB
     const repositories = await getCollection("repositories", skip * 2, 2);
+
+    // return JSON response
 	return new Response(JSON.stringify(repositories));
 }

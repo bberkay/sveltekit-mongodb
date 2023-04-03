@@ -1,32 +1,86 @@
 <script lang="ts">
-    export let data: any;
+    interface Repository {
+        title: string;
+        description: string;
+        link: string;
+        tags: string[];
+    }
+
+    // Comes from +page.svelte for repositories
+    export let data: Array<Repository>;
 
     let skip = 1;
-    async function increment() {
-        if(skip < 3) {
+    async function increment(): Promise<void>
+    {
+        // Increment skip by 1
+        if (skip < 3) {
             skip += 1;
             await paginateData();
         }
     }
 
-    async function decrease() {
-        if(skip > 1) {
+    async function decrease(): Promise<void>
+    {
+        // Decrease skip by 1
+        if (skip > 1) {
             skip -= 1;
             await paginateData();
         }
     }
 
-    async function setPagination(n: number) {
+    async function setPagination(n: number): Promise<void>
+    {
+        // Set skip to n
         skip = n;
         await paginateData();
     }
 
-    async function paginateData(){
+    async function paginateData(): Promise<void>
+    {
+        // Fetch data from server with skip then set to data
         const response = await fetch("/pagination?skip=" + (skip - 1));
         data = await response.json();
     }
+
+    let search: string = "";
+    let search_control: boolean = false; // Control like onMount
+
+    async function searchRepositories() {
+        // Fetch data from server with search then set to data
+        const response = await fetch("/search?search=" + search);
+        data = await response.json();
+    }
+
+    // Search if search.length >= 3
+    $: if (search.length >= 3) {
+        searchRepositories();
+        search_control = true;
+    } else if (search.length < 3 && search_control) {
+        // If search.length < 3 and search_control is true then get page 1(skip 0) from server
+        paginateData();
+        search_control = false;
+    }
 </script>
 
+<!-- Search-->
+<div class="mb-3">
+    <input
+        type="text"
+        class="form-control"
+        id="searchInput"
+        aria-describedby="searchHelp"
+        placeholder="Search for a repository"
+        name="search"
+        size="30"
+        min="3"
+        autocomplete="off"
+        required
+        bind:value={search}
+    />
+</div>
+<!-- Search END -->
+
+<!-- Repositories -->
 {#each data as repository}
     <div class="card inner-card text-start mb-4">
         <div class="pt-2 ps-3 pe-3 card-header-section">
@@ -37,7 +91,8 @@
                         class="card-title-link ms-1"
                         target="_blank"
                         ><span class="badge text-bg-primary">See</span>
-                    </a></small>
+                    </a></small
+                >
             </h5>
         </div>
         <div class="border-div mt-1 mb-1" />
@@ -51,21 +106,46 @@
         </div>
     </div>
 {/each}
+<!-- Repositories END -->
 
-<nav aria-label="Page navigation example" class = "mx-auto">
+<!-- Pagination -->
+{#if search.length < 3}
+<nav aria-label="Page navigation example" class="mx-auto">
     <ul class="pagination">
         <li class="page-item">
-            <button class="page-link bg-svelte" on:click={decrease} aria-label="Previous">
+            <button
+                class="page-link bg-svelte"
+                on:click={decrease}
+                aria-label="Previous"
+            >
                 <span aria-hidden="true">&laquo;</span>
             </button>
         </li>
-        <li class="page-item"><button class="page-link" on:click={() => setPagination(1)}>1</button></li>
-        <li class="page-item"><button class="page-link" on:click={() => setPagination(2)}>2</button></li>
-        <li class="page-item"><button class="page-link" on:click={() => setPagination(3)}>3</button></li>
         <li class="page-item">
-            <button class="page-link bg-svelte" on:click={increment} aria-label="Next">
+            <button class="page-link" on:click={() => setPagination(1)}
+                >1</button
+            >
+        </li>
+        <li class="page-item">
+            <button class="page-link" on:click={() => setPagination(2)}
+                >2</button
+            >
+        </li>
+        <li class="page-item">
+            <button class="page-link" on:click={() => setPagination(3)}
+                >3</button
+            >
+        </li>
+        <li class="page-item">
+            <button
+                class="page-link bg-svelte"
+                on:click={increment}
+                aria-label="Next"
+            >
                 <span aria-hidden="true">&raquo;</span>
             </button>
         </li>
     </ul>
 </nav>
+{/if}
+<!-- Pagination END -->
