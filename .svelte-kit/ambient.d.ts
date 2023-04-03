@@ -26,6 +26,11 @@
  * ```
  */
 declare module '$env/static/private' {
+	export const MAIL_HOST: string;
+	export const MAIL_PORT: string;
+	export const MAIL_USERNAME: string;
+	export const MAIL_PASSWORD: string;
+	export const MONGO_URL: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
 	export const ChocolateyInstall: string;
@@ -143,6 +148,11 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
+		MAIL_HOST: string;
+		MAIL_PORT: string;
+		MAIL_USERNAME: string;
+		MAIL_PASSWORD: string;
+		MONGO_URL: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
 		ChocolateyInstall: string;
