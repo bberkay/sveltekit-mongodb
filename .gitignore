@@ -121,6 +121,3 @@ dist
 
 # Prettier
 .prettierrc
-
-# ENV
-.env
