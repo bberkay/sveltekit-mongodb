@@ -77,6 +77,7 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_event: string;
 	export const npm_lifecycle_script: string;
 	export const npm_node_execpath: string;
+	export const npm_package_engines_node: string;
 	export const npm_package_json: string;
 	export const npm_package_name: string;
 	export const npm_package_version: string;
@@ -198,6 +199,7 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_event: string;
 		npm_lifecycle_script: string;
 		npm_node_execpath: string;
+		npm_package_engines_node: string;
 		npm_package_json: string;
 		npm_package_name: string;
 		npm_package_version: string;

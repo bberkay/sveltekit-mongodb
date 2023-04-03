@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { ActionData } from './././$types';
+    import type { ActionData } from '././././$types';
 
     export let form: ActionData;
 </script>
@@ -69,4 +69,5 @@
     {/if}
     <!-- Result End -->
   </form>
+  <span class = "mt-2" style = "color:#b5b3b3;font-size:12px;">This form is example, please edit <a href="https://github.com/bberkay/sveltekit_mongodb_ts/blob/main/.env" target="_blank">.env</a> file for run.</span>
 </div>
