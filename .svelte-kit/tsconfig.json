@@ -7,12 +7,6 @@
 			"$db/*": [
 				"../src/db/*"
 			],
-			"$stores": [
-				"../src/lib/stores"
-			],
-			"$stores/*": [
-				"../src/lib/stores/*"
-			],
 			"$lib": [
 				"../src/lib"
 			],
