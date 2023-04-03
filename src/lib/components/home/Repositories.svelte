@@ -1,7 +1,7 @@
 <script lang="ts">
     export let data: any;
 
-    let skip = 0;
+    let skip = 1;
     async function increment() {
         if(skip < 3) {
             skip += 1;
@@ -22,8 +22,8 @@
     }
 
     async function paginateData(){
-        const response = await fetch("?skip=" + (skip - 1));
-        await response.json();
+        const response = await fetch("/pagination?skip=" + (skip - 1));
+        data = await response.json();
     }
 </script>
 

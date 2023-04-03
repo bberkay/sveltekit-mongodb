@@ -4,7 +4,7 @@ body{
 }
 
 .card{
-    width:350px;
+    width:370px;
     background-color: #242424;
 }
 
@@ -61,7 +61,7 @@ input:focus .input-group{
 }
 
 .inner-card{
-    width:315px;
+    width:335px;
     border:1px solid #424242;
     background-color: #383838;
     color:#ccc;

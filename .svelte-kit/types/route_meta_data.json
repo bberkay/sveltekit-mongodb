@@ -4,5 +4,8 @@
 	],
 	"/contact": [
 		"src/routes/contact/+page.server.ts"
+	],
+	"/pagination": [
+		"src/routes/pagination/+server.ts"
 	]
 }
