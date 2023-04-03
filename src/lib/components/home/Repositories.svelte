@@ -25,11 +25,10 @@
         const response = await fetch("?skip=" + (skip - 1));
         await response.json();
     }
-
-    $: console.log(data);
+    
 </script>
 
-{#each data["data"] as repository}
+{#each data as repository}
     <div class="card inner-card text-start mb-4">
         <div class="pt-2 ps-3 pe-3 card-header-section">
             <h5>
