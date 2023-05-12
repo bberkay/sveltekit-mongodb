@@ -6,5 +6,4 @@
 
 The main goal is to use sveltekit, mongodb and typescript technologies in the same project.
 
-URL: https://sveltekit-mongodb-ts.onrender.com 
-The site may open slowly because I deployed the project to a free render account.
+URL: https://sveltekit-mongodb-ts.onrender.com (The site may open slowly because I deployed the project to a free render account)
