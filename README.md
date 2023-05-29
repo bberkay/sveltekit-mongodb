@@ -2,7 +2,7 @@
 
 #### Features
 - Contact with Nodemailer
-- Reactive Pagination and Search
+- Realtime Pagination and Search
 
 The main goal is to use sveltekit, mongodb and typescript technologies in the same project.
 
