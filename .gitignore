@@ -121,3 +121,5 @@ dist
 
 # Prettier
 .prettierrc
+
+/.svelte-kit
