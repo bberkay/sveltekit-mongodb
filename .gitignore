@@ -123,3 +123,9 @@ dist
 .prettierrc
 
 /.svelte-kit
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/modules.xml
+/.idea/codeStyles/Project.xml
+/.idea/sveltekit_mongodb_ts.iml
+/.idea/vcs.xml
