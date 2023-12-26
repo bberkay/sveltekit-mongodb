@@ -7,10 +7,12 @@ I used MongoDB Atlas for the database and Nodemailer for the contact form.</p>
 <img src="https://i.ibb.co/gtctgXY/sveltekit-mongodb-banner.jpg" alt="sveltekit-mongodb" border="0">
 
 <h3>Features</h3>
+
 - Realtime Pagination and Search
 - Contact with Nodemailer
 
 <h3>Installation & Setup</h3>
+
 1. Clone the repository
 ```bash
 git clone https://github.com/bberkay/sveltekit-mongodb.git
