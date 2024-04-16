@@ -72,6 +72,13 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
@@ -118,14 +125,3 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
-
-# Prettier
-.prettierrc
-
-/.svelte-kit
-/.idea/.gitignore
-/.idea/codeStyles/codeStyleConfig.xml
-/.idea/modules.xml
-/.idea/codeStyles/Project.xml
-/.idea/sveltekit_mongodb_ts.iml
-/.idea/vcs.xml
