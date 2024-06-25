@@ -2,11 +2,11 @@
 <p><a href = "https://sveltekit-mongodb.vercel.app/">Live Demo</a> (The site may open slowly because I deployed the project to a free vercel account)</p>
 
 <h3>Table of Contents</h3>
-<ul>
+<ol>
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#features">Features</a></li>
   <li><a href="#installation--setup">Installation & Setup</a></li>
-</ul>
+</ol>
 
 <h3>Introduction</h3>
 <p>The main purpose of this project is to learn how to use MongoDB with Sveltekit so it is very simple and detailed with comments.   
