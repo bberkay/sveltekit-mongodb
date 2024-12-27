@@ -1,5 +1,5 @@
 <h1 align = "center">Simple Sveltekit App with MongoDB and TypeScript</h1>
-<p><a href = "https://sveltekit-mongodb.vercel.app/">Live Demo</a> (The site may open slowly because I deployed the project to a free vercel account)</p>
+<p>This is <code>main</code> branch, you can also check <code><a href="https://github.com/bberkay/sveltekit-mongodb/tree/svelte-4">svelte-4</a></code> branch to see svelte 4 version. <a href = "https://sveltekit-mongodb.vercel.app/">Live Demo</a> (The site may open slowly because I deployed the project to a free vercel account)</p>
 
 <h3>Table of Contents</h3>
 <ol>
