@@ -7,7 +7,7 @@
     }
 
     // Comes from +page.svelte for repositories
-    export let data: Array<Repository>;
+    let { data = $bindable() }: { data: Repository[] } = $props();
 
     let skip = 1;
     async function increment(): Promise<void>
@@ -42,8 +42,8 @@
         data = await response.json();
     }
 
-    let search: string = "";
-    let search_control: boolean = false; // Control like onMount
+    let search: string = $state("");
+    let search_control: boolean = $state(false); // Control like onMount
 
     async function searchRepositories() {
         // Fetch data from server with search then set to data
@@ -52,14 +52,16 @@
     }
 
     // Search if search.length >= 3
-    $: if (search.length >= 3) {
-        searchRepositories();
-        search_control = true;
-    } else if (search.length < 3 && search_control) {
-        // If search.length < 3 and search_control is true then get page 1(skip 0) from server
-        paginateData();
-        search_control = false;
-    }
+    $effect(() => {
+        if (search.length >= 3) {
+            searchRepositories();
+            search_control = true;
+        } else if (search.length < 3 && search_control) {
+            // If search.length < 3 and search_control is true then get page 1(skip 0) from server
+            paginateData();
+            search_control = false;
+        }
+    });
 </script>
 
 <!-- Search-->
@@ -95,7 +97,7 @@
                 >
             </h5>
         </div>
-        <div class="border-div mt-1 mb-1" />
+        <div class="border-div mt-1 mb-1"></div>
         <div class="pt-2 ps-3 pe-3 pb-3 card-content">
             <p class="card-content-p">{repository.description}</p>
             <small>
@@ -115,31 +117,31 @@
         <li class="page-item">
             <button
                 class="page-link bg-svelte"
-                on:click={decrease}
+                onclick={decrease}
                 aria-label="Previous"
             >
                 <span aria-hidden="true">&laquo;</span>
             </button>
         </li>
         <li class="page-item">
-            <button class="page-link" on:click={() => setPagination(1)}
+            <button class="page-link" onclick={() => setPagination(1)}
                 >1</button
             >
         </li>
         <li class="page-item">
-            <button class="page-link" on:click={() => setPagination(2)}
+            <button class="page-link" onclick={() => setPagination(2)}
                 >2</button
             >
         </li>
         <li class="page-item">
-            <button class="page-link" on:click={() => setPagination(3)}
+            <button class="page-link" onclick={() => setPagination(3)}
                 >3</button
             >
         </li>
         <li class="page-item">
             <button
                 class="page-link bg-svelte"
-                on:click={increment}
+                onclick={increment}
                 aria-label="Next"
             >
                 <span aria-hidden="true">&raquo;</span>

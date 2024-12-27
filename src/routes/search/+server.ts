@@ -1,9 +1,9 @@
-import { searchCollection } from "$db/collections";   
+import { searchCollection } from "$db/collections";
 
-export async function GET(request: Request): Promise<Response> {   
+export async function GET(request: Request): Promise<Response> {
     // get search from searchParams in request
     const url = new URL(request.url);
-    let search = url.searchParams.get("search"); 
+    const search = url.searchParams.get("search");
 
     // get repositories from MongoDB
     const repositories = await searchCollection("repositories", search!);

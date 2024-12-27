@@ -1,3 +1,7 @@
+<script lang="ts">
+    let { children } = $props();
+</script>
+
 <div class = "container">
     <main class = "d-flex justify-content-center align-items-center vh-100">
         <div class="d-block text-center">
@@ -9,7 +13,7 @@
             <!-- Navbar END -->
             <div class="pt-4">
                 <!-- Page Content -->
-                <slot />
+                {@render children?.()}
                 <!-- Page Content END -->
             </div>
             <!-- Footer -->
@@ -34,5 +38,5 @@
             </footer>
             <!-- Footer END -->
         </div>
-    </main> 
+    </main>
 </div>

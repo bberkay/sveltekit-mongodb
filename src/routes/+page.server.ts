@@ -1,10 +1,10 @@
-import { getCollection } from "$db/collections";   
+import { getCollection } from "$db/collections";
 
-export async function load(request: Request): Promise<{ data: JSON }> {   
+export async function load(request: Request): Promise<{ data: JSON }> {
     // get skip and limit from searchParams in request
     const url = new URL(request.url);
-    let skip = Number(url.searchParams.get("skip")); 
-	if(skip < 0) 
+    let skip = Number(url.searchParams.get("skip"));
+	if(skip < 0)
         skip = 0;
 
     // get repositories from MongoDB

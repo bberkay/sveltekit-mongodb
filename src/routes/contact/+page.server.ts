@@ -1,6 +1,6 @@
 import { MAIL_HOST, MAIL_PORT, MAIL_USERNAME, MAIL_PASSWORD } from '$env/static/private'; // Get Mail Data from .env
 import nodemailer from 'nodemailer';
-import type { Actions } from "./$types";
+import type { Actions } from './$types';
 
 export const actions = {
     default: async ({ request }) => {
@@ -46,7 +46,7 @@ export const actions = {
                 result = false;
             }
         });
-        
+
         // Send Result
         return {
             success:result

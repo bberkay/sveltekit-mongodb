@@ -1,7 +1,7 @@
 <script lang="ts">
-    import type { ActionData } from '././././$types';
+    import type { ActionData } from '/$types';
 
-    export let form: ActionData;
+    let { form }: { form: ActionData } = $props();
 </script>
 
 <div class="card p-3">
@@ -48,7 +48,7 @@
         minlength="15"
         name="message"
         required
-      />
+></textarea>
       <!-- Message END -->
     </div>
     <!-- Result -->
